@@ -5,6 +5,7 @@ body
 	background: linear-gradient(to right,white,#312E29);
 	margin: 0px;
         min-width: 1200px;
+        font-family: Arial,Verdana,Time New Roman;
         
         
 }
@@ -14,19 +15,33 @@ header
 	
 	height : 150px;
 	width: 100%;
+        background-color: lightgray;
 	
+}
+hearder p 
+{
+    margin:0;
 }
 footer
 {
-    color: black;
-    background:Yellow;
+    color: white;
     text-align: center;
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width:100%;
     margin-bottom : 0px;
     font-weight: bold;
         
+}
+footer p
+{
+    background-color:#D82B2B;
+    margin:2px;
+    
+}
+footer a
+{
+    background-color: transparent;
 }
 
 
@@ -58,12 +73,13 @@ footer
 	
 	height:100%;
 	width:35%;
-	float: left;	
+	float: left;
+        
 }
 .infos2
 {
 	text-align :center;
-	font-size: 25px;
+	font-size: 150%;
 	margin : 0px;
 	margin-top : 35px;
 }
@@ -81,11 +97,25 @@ footer
 	width:20%;
 	float: left;
 }
+.nom
+{
+    font-weight: bold;
+    font-size:140%;
+    font-variant:small-caps;
+}
 /*Menu*/
-
+#monmenu a
+{
+   text-decoration: none; 
+   color:white;
+}
+#monmenu a:hover
+{
+    color:yellow;
+}
 #monmenu
 {
-	width: 100%;
+	
 	background-color: #D82B2B;
 	margin : 0px;
         font-weight: bold;
@@ -105,6 +135,8 @@ footer
 {
     padding:0px;
     margin:0px;
+    
+    
 }
 
 .niveau2 .accueil{
@@ -144,19 +176,24 @@ li:hover ul.niveau2, li li:hover ul.niveau3
 	max-height: 15em;
       
 }
+
 /*offre*/
 #annonce
 {
     
-    margin-top: 150px;
+    margin-top: 80px;
+    margin-bottom: 150px;
     text-align: center;
+    border-radius:10px;
+    
 }
 .platdujour
 {
-    border:1px solid;
+    border: 5px solid;
     text-align: center;
     width: 200px;
     display : inline-block;
+    border-radius:10px;
 
 }
 
@@ -167,7 +204,8 @@ li:hover ul.niveau2, li li:hover ul.niveau3
     text-align: center;
     width: 200px;
     display : inline-block;
-    border: 1px solid;
+    border: 5px solid;
+    border-radius:10px;
 }
 #promotion
 {
@@ -176,22 +214,59 @@ li:hover ul.niveau2, li li:hover ul.niveau3
 }
 .emporter
 {
-    border: 1px solid;
+    border: 5px solid;
     text-align: center;
     width: 300px;
     display : inline-block;
+    border-radius:10px;
+    background-image:url("image/cadre.png"); 
 }
 .livraison
 {
+    background-image:url("image/cadre.jpgS");
     display: inline-block;
-    margin-left: 200px;
     padding: 2px;
     text-align: center;
-    border: 1px solid;
+    border: 5px solid;
     width:300px;
+    border-radius:10px;
+    
+    
+    
+}
+#ou
+{
+    display: inline-block;
+    width:200px;
+    font-size: 30px;
 }
 #localisation
 {
     text-align: center;
-    margin-top: 275px;
+    position:relative;
+    bottom:0;
+    
+    
+}
+#titre
+{
+    text-align: center;
+}
+
+#formulaire
+{
+    width:100%;
+    margin: auto;
+    display: inline-block;
+    text-align: center;
+    
+}
+#formulaire p
+{
+    text-align:center;
+    display: inline-block; 
+}
+#formulaire input
+{
+    margin-top: 15px; 
 }

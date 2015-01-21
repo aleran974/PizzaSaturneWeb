@@ -57,30 +57,14 @@
                 </li>
             </ul>	
         </nav>
-        <div id="annonce">
-            <div class ="platdujour">
-                <h2><u>Plat du Jour</u></h2>
-                <p>lundi : magret de canard</p>
-            </div>	
-            <div class="offredumoment">
-                <h2><u>Offre du Moment</u></h2>
-                <p>Pizza Raclette</p>
-            </div>
-        </div>
-        <div id="promotion">
-            <div class="emporter">
-                <h3><u>A Emporter</u></h3>
-                <p> 3 grandes pizzas = la moins Chères offertes<br/>
-                    ou<br/>
-                    2 grandes pizzas = 17 €<p>
-            </div>
-            <p id="ou"> ou </p>
-            <div class="livraison">
-                <h3><u>Livraison</u></h3>
-                <p> 2 grandes pizzas = 19 €</p>
-                    
-            </div>
-        </div>
+        <section id="titre">
+            <h1><u>Nos Paninis</u></h1>
+        </section>
+        
+ 
+        <section id="tab">
+            
+        </section>
         
         <footer>
             <a href="https://www.google.fr/maps/place/Pizza+Saturne/@44.807163,-0.627164,17z/data=!3m1!4b1!4m2!3m1!1s0xd54d8f6d0df81ff:0x51e401f95faf96">Plan d'accès</a>
