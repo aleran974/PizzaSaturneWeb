@@ -1,0 +1,82 @@
+create database pizzasaturne;
+
+creation des tables: 
+
+create table plat(
+pl_id int not null AUTO_INCREMENT,
+pl_designation varchar(30),
+pl_disponibilite boolean,
+pl_tarif float,
+pl_taille varchar(10),
+pl_base varchar(10),
+constraint PK_plat primary key(pl_id));
+
+create table ingredient(
+ing_id int not null AUTO_INCREMENT,
+ing_nom varchar(50),
+ing_disponibilite boolean,
+constraint PK_ingredient primary key (ing_id));
+
+create table type(
+typ_id AUTO_INCREMENT,
+typ_libelle varchar(50),
+constraint PK_type primary key(typ_id));
+
+create table boisson(
+bois_id AUTO_INCREMENT,
+bois_nom varchar(60),
+bois_alcool boolean,
+constraint PK_boisson primary key(bois_id));
+
+create table livre_dor(
+liv_id AUTO_INCREMENT,
+liv_pseudo varchar(50),
+liv_commentaire text,
+constraint PK_livre_dor primary key(liv_id));
+
+create table composer(
+pl_id AUTO_INCREMENT,
+ing_id AUTO_INCREMENT,
+constraint PK_composer primary key(pl_id & ing_id));
+
+insertion donnée:
+
+insert into ingredient(ing_designation,ing_type,ing_disponibilite)
+values
+("bolognaise","viande",true),
+("boudin antillais","viande",true),
+("chorizo","viande",true),
+("jambon","viande",true),
+("jambon crue","viande",true),
+("kebab","viande",true),
+("lardons","viande",true),
+("merguez","viande",true),
+("poulet","viande",true),
+("ananas","fruit",true),
+("artichaut","legume",true),
+("capres","legume",true),
+("champignon","legume",true),
+("noix","legume",true),
+("oignon","legume",true),
+("olives","legume",true),
+("persillade","legume",true),
+("poivron","legume",true),
+("pomme","fruit",true),
+("pomme de terre","legume",true),
+("tomate","legume",true),
+("bleu","laitier",true),
+("chèvre","laitier",true),
+("mozzarella","laitier",true),
+("reblochon","laitier",true),
+("oeuf","autre",true),
+("miel","autre",true),
+("saumon","poisson",true),
+("anchois","poisson",true),
+("thon","poisson",true),
+("basillic","epice",true),
+("cumin","epice",true),
+("curry","epice",true),
+("origan","epice",true),
+("poivre","epice",true);
+
+

@@ -52,6 +52,7 @@
                         <li><a href="dessert.php">Dessert</a></li>
                         <li><a href="boissons.php">Boissons</a></li>
                         <li><a href="formule.php">Nos Menus</a></li>
+                        <li><a href="livredor.php">Livre d'or</a></li>
                         <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </li>
@@ -61,11 +62,19 @@
             <h1><u>Informations</u></h1>
         </section>
         
- 
-        <section id="tab">
-            
+        <section id="infos">
+            <h2>Pizza Saturne</h2>
+            <p>42 avenue jean Jaurès</p>
+            <p>33600 Pessac</p>
+            <p>tel: 05 56 46 08 59</p>
+             
+            <h4> Heure d'ouverture</h4>
+            <p> Du Mardi au Samedi : 11h à 22h</p>
+            <p> Le Dimanche : 18h à 22h</p>
         </section>
-        
+        <section id="facebook">
+            <a href="https://www.facebook.com/saturne.pessac?fref=ts"><img src="image/facebook.png" alt="html5" /></a> 
+        </section>
         <footer>
             <a href="https://www.google.fr/maps/place/Pizza+Saturne/@44.807163,-0.627164,17z/data=!3m1!4b1!4m2!3m1!1s0xd54d8f6d0df81ff:0x51e401f95faf96">Plan d'accès</a>
             <p> Copyright 2015 Pizza Saturne</p>

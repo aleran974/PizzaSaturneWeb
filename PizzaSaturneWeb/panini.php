@@ -52,6 +52,7 @@
                         <li><a href="dessert.php">Dessert</a></li>
                         <li><a href="boissons.php">Boissons</a></li>
                         <li><a href="formule.php">Nos Menus</a></li>
+                        <li><a href="livredor.php">Livre d'or</a></li>
                         <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </li>

@@ -119,6 +119,7 @@ footer a
 	background-color: #D82B2B;
 	margin : 0px;
         font-weight: bold;
+       
 	
 	
 	
@@ -145,15 +146,17 @@ footer a
 .niveau2 li
 {
 	display:inline-block;
-	padding: 0px 30px 0px 30px;
+	padding: 0px 20px 0px 20px;
         margin:0px;
 	position: absolue;
         border-right:1px solid;
 	text-align:center;
+        
 }
 
 .niveau3
-{
+{       
+        
 	overflow: hidden;
 	max-height: 0;
 	position: absolute;
@@ -166,6 +169,7 @@ footer a
 }
 .niveau3 li
 {
+        
 	display : block;
 	text-align: center;
 	border :none;
@@ -180,7 +184,6 @@ li:hover ul.niveau2, li li:hover ul.niveau3
 /*offre*/
 #annonce
 {
-    
     margin-top: 80px;
     margin-bottom: 150px;
     text-align: center;
@@ -189,50 +192,73 @@ li:hover ul.niveau2, li li:hover ul.niveau3
 }
 .platdujour
 {
-    border: 5px solid;
+    background-image: url("../image/cadre.jpg");
+    border: 5px solid black;
     text-align: center;
     width: 200px;
     display : inline-block;
     border-radius:10px;
+    color:white;
 
 }
-
+.platdujour h2
+{
+   font-family: "Quand tu dors" ; 
+   font-size: 170%;
+}
 .offredumoment
 {
-
+    background-image: url("../image/cadre.jpg");
     margin-left: 200px;
     text-align: center;
     width: 200px;
     display : inline-block;
-    border: 5px solid;
+    border: 5px solid black;
     border-radius:10px;
+    color:white;
+}
+.offredumoment h2
+{
+   font-family: "Quand tu dors" ; 
+   font-size: 170%;
 }
 #promotion
 {
     margin-top: 20px;
-    text-align: center;   
+    text-align: center;
+    
 }
 .emporter
 {
-    border: 5px solid;
+    border: 5px solid black;
+    color: white;
     text-align: center;
     width: 300px;
     display : inline-block;
     border-radius:10px;
-    background-image:url("image/cadre.png"); 
+    background-image: url("../image/cadre.jpg");
+}
+.emporter h3
+{
+   font-family: "Quand tu dors" ; 
+   font-size: 170%;
 }
 .livraison
 {
-    background-image:url("image/cadre.jpgS");
+    background-image: url("../image/cadre.jpg");
+    font-family: "Quand tu dors" ;
+    color:white;
     display: inline-block;
     padding: 2px;
     text-align: center;
-    border: 5px solid;
+    border: 5px solid black;
     width:300px;
-    border-radius:10px;
-    
-    
-    
+    border-radius:10px;  
+}
+.livraison h3
+{
+   font-family: "Quand tu dors" ; 
+   font-size: 170%;
 }
 #ou
 {
@@ -253,20 +279,22 @@ li:hover ul.niveau2, li li:hover ul.niveau3
     text-align: center;
 }
 
-#formulaire
+/* formulaire livred'or */
+#form
 {
-    width:100%;
-    margin: auto;
-    display: inline-block;
     text-align: center;
     
 }
-#formulaire p
+/* Informations diverses*/
+#infos
 {
-    text-align:center;
-    display: inline-block; 
+    text-align: center;
+    font-family: verdana;
+    color: black;
+    
 }
-#formulaire input
+#facebook
 {
-    margin-top: 15px; 
+   text-align:center;
+  
 }

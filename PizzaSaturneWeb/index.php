@@ -52,6 +52,7 @@
                         <li><a href="dessert.php">Dessert</a></li>
                         <li><a href="boissons.php">Boissons</a></li>
                         <li><a href="formule.php">Nos Menus</a></li>
+                        <li><a href="livredor.php">Livre d'or</a></li>
                         <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </li>
@@ -76,7 +77,7 @@
             </div>
             <p id="ou"> ou </p>
             <div class="livraison">
-                <h3><u>Livraison</u></h3>
+                <h3><u>En Livraison</u></h3>
                 <p> 2 grandes pizzas = 19 €</p>
                     
             </div>

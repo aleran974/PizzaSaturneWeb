@@ -52,6 +52,7 @@
                         <li><a href="dessert.php">Dessert</a></li>
                         <li><a href="boissons.php">Boissons</a></li>
                         <li><a href="formule.php">Nos Menus</a></li>
+                        <li><a href="livredor.php">Livre d'or</a></li>
                         <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </li>
@@ -60,11 +61,7 @@
         <section id="titre">
             <h1><u>Nos Pizzas : Base Tomate</u></h1>
         </section>
-        <section id="formulaire">
-            <p>Choix de l'ingredient:</p> 
-             <input type="text" name="ingredient" value="choix"/>
-            <input type="button" name="bt1" value="rechercher"/>
-        </section>
+        
         <section id="tab">
             
         </section>
