@@ -82,6 +82,9 @@
                     
             </div>
         </div>
+        <div id="facebook_accueil">
+            <a href="https://www.facebook.com/saturne.pessac?fref=ts"><img src="image/facebook_accueil.png" alt="html5" /></a> 
+        </div>
         
         <footer>
             <a href="https://www.google.fr/maps/place/Pizza+Saturne/@44.807163,-0.627164,17z/data=!3m1!4b1!4m2!3m1!1s0xd54d8f6d0df81ff:0x51e401f95faf96">Plan d'accès</a>

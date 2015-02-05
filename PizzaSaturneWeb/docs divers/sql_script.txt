@@ -1,0 +1,224 @@
+création base de données:
+	create database PizzaSaturne;
+	
+Création des tables:
+
+	create table recette(
+	rec_id int not null AUTO_INCREMENT,
+	rec_nom varchar(50),
+	rec_tarif float,
+	rec_dispo boolean,
+	rec_photo varchar(100),
+	rec_typ_id int,
+	rec_tail_id int,
+	constraint PK_recette primary key(rec_id));
+
+	create table type(
+	typ_id int not null AUTO_INCREMENT,
+	typ_libelle varchar(30),
+	constraint PK_type primary key(typ_id));
+	
+	create table taille(
+	tail_id int not null AUTO_INCREMENT,
+	tail_libelle varchar(30),
+	constraint PK_taille primary key(tail_id));
+	
+	create table ingredient(
+	ing_id int not null AUTO_INCREMENT,
+	ing_nom varchar(50),
+	ing_dispo boolean,
+	ing_typing_id int,
+	constraint PK_ingredient primary key(ing_id));
+	
+	create table typing(
+	typing_id int not null AUTO_INCREMENT,
+	typing_libelle varchar(15),
+	constraint PK_typing primary key(typing_id));
+	
+	create table platdujour(
+	pdj_id int not null AUTO_INCREMENT,
+	pdj_jour date,
+	constraint PK_platdujour primary key(pdj_id));
+	
+	create table boisson(
+	bois_id int not null AUTO_INCREMENT,
+	bois_libelle varchar(50),
+	bois_volume float,
+	bois_tarif float,
+	bois_dispo boolean,
+	bois_alcoolise boolean,
+	constraint PK_boisson primary key(bois_id));
+	
+	create table livredor(
+	liv_id int not null AUTO_INCREMENT,
+	liv_annee year,
+	constraint PK_livredor primary key(liv_id));
+	
+	create table article(
+	art_id int not null AUTO_INCREMENT,
+	art_pseudo varchar(20),
+	art_commentaire text,
+	art_liv_id int,
+	constraint PK_article primary key(art_id));
+	
+	create table pouvoir(
+	pouv_pdj_id int,
+	pouv_rec_id int,
+	constraint PK_pouvoir primary key(pouv_pdj_id,pouv_rec_id));
+	
+Alter table: 
+	
+	alter table recette
+	add constraint FK_recette_rec_typ_id foreign key(rec_typ_id)
+	references type(typ_id);
+	
+	alter table recette
+	add constraint FK_recette_rec_tail_id
+	foreign key(rec_tail_id)
+	references taille(tail_id);
+	
+	alter table ingredient
+	add constraint FK_ingredient_ing_typing_id
+	foreign key(ing_typing_id)
+	references typing(typing_id);
+	
+	alter table article
+	add constraint FK_article_art_liv_id
+	foreign key (art_liv_id)
+	references livredor(liv_id);
+	
+Insertion des données: 
+
+	insert into ingredient (ing_nom,ing_dispo,ing_typing_id)
+	values
+	("bolognaise",true,1),
+	("boudin antillais",true,1),
+	("chorizo",true,1),
+	("jambon",true,1),
+	("jambon crue",true,1),
+	("kebab",true,1),
+	("lardons",true,1),
+	("merguez",true,1),
+	("poulet",true,1),
+	("ananas",true,3),
+	("artichaut",true,2),
+	("capres",true,2),
+	("champignon",true,2),
+	("noix",true,3),
+	("oignon",true,2),
+	("olives",true,2),
+	("persillade",true,2),
+	("poivron",true,2),
+	("pomme",true,3),
+	("pomme de terre",true,2),
+	("tomate",true,2),
+	("bleu",true,4),
+	("chèvre",true,4),
+	("mozzarella",true,4),
+	("reblochon",true,4),
+	("oeuf",true,5),
+	("miel",true,5),
+	("saumon",true,7),
+	("anchois",true,7),
+	("thon",true,7),
+	("basillic",true,8),
+	("cumin",true,8),
+	("curry",true,8),
+	("origan",true,8),
+	("poivre",true,8),
+	("sauce tomate",true,6),
+	("crème fraiche",true,6)
+	("chicken wing",true,1);
+	
+	
+	insert into typing (typing_libelle)
+	values
+	("viande"),
+	("legume"),
+	("fruit"),
+	("laitier"),
+	("autre"),
+	("sauce"),
+	("poisson"),
+	("epice");
+	
+	insert into taille(tail_libelle)
+	values 
+	("grande"),
+	("petite");
+	
+	insert type(typ_libelle)
+	values 
+	("pizza"),
+	("bruschetta"),
+	("pates"),
+	("panini"),
+	("dessert");
+
+	insert into boisson(bois_libelle,bois_volume,bois_tarif,bois_dispo,bois_alcoolise)
+	values
+	("Coca Cola",33,2.00,true,false),
+	("sprite",33,2.00,true,false),
+	("fanta",33,2.00,true,false),
+	("schweeps agrum",33,2.00,true,false),
+	("perrier",33,2.00,true,false),
+	("orangina",33,2.00,true,false),
+	("oasis",33,2.00,true,false),
+	("ice tea",33,2.00,true,false),
+	("kass citron",33,2.00,true,false),
+	("Kronenbourg",33,2.00,true,true),
+	("Desperados",33,3.00,true,true),
+	("Guiness",33,3.00,true,true),
+	("Coca Cola",150,3.00,true,false),
+	("eau",50,1.50,true,false),
+	("eau",33,2.50,true,false),
+	("lambrusco rouge",75,7.00,true,true),
+	("lambrusco rouge",37.5,4.50,true,true),
+	("lambrusco rosé",75,7.00,true,true),
+	("lambrusco rose",37.5,4.50,true,true),
+	("lambrusco blanc",75,7.00,true,true),
+	("côte de provence rosé",75,7.00,true,true),
+	("Bordeau Rouge",75,7.00,true,true);
+	
+	
+insert into recette (rec_nom,rec_tarif,rec_dispo,rec_photo,rec_typ_id)
+values
+("Italienne",0,true,"",1),
+("Espagnol",0,true,"",1),
+("Française",0,true,"",1),
+("Orientale",0,true,"",1),
+("Corse",0,true,"",1),
+("Canadienne",0,true,"",1),
+("Parisienne",0,true,"",1),
+("California",0,true,"",1),
+("Mexicaine",0,true,"",1),
+("Americaine",0,true,"",1),
+("Landaise",0,true,"",1),
+("Bordelaise",0,true,"",1),
+("Antillaise",0,true,"",1),
+("Pyrénéenne",0,true,"",1),
+("Saturne",0,true,"",1),
+("Tahitienne",0,true,"",1),
+("Anglaise",0,true,"",1),
+("Auvergnate",0,true,"",1),
+("Romaine",0,true,"",1),
+("Norvégienne",0,true,"",1),
+("Baltique",0,true,"",1),
+("Sicilienne",0,true,"",1),
+("Africaine",0,true,"",1),
+("Indonésienne",0,true,"",1),
+("Alsacienne",0,true,"",1),
+("Kebab",0,true,"",1),
+("Parma",6.0,true,"",2),
+("Nordique",6.0,true,"",2),
+("French",6,true,"",2),
+("Soleil",6,true,"",2),
+("Savoyarde",6,true,"",2),
+("Atlantique",6,true,"",2),
+("Napolitaine",5.5,true,"",3),
+("Bolognaise",6.0,true,"",3),
+("Matriciana",6.5,true,"",3),
+("Carbonara",6.5,true,"",3),
+("Campagnarde",6.5,true,"",3),
+("Raviolis aux 5 fromages",8.5,true,"",3),
+("Gratin de Lasagnes Maison",6.0,true,"",3);

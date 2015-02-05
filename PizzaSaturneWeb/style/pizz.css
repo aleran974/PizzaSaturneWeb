@@ -206,6 +206,11 @@ li:hover ul.niveau2, li li:hover ul.niveau3
    font-family: "Quand tu dors" ; 
    font-size: 170%;
 }
+.platdujour p
+{
+     font-family: "Quand tu dors" ; 
+   font-size: 170%;  
+}
 .offredumoment
 {
     background-image: url("../image/cadre.jpg");
@@ -220,6 +225,11 @@ li:hover ul.niveau2, li li:hover ul.niveau3
 .offredumoment h2
 {
    font-family: "Quand tu dors" ; 
+   font-size: 170%;
+}
+.offredumoment p
+{
+    font-family: "Quand tu dors" ; 
    font-size: 170%;
 }
 #promotion
@@ -243,6 +253,11 @@ li:hover ul.niveau2, li li:hover ul.niveau3
    font-family: "Quand tu dors" ; 
    font-size: 170%;
 }
+.emporter p
+{
+   font-family: "Quand tu dors" ; 
+   font-size: 170%;
+}
 .livraison
 {
     background-image: url("../image/cadre.jpg");
@@ -256,6 +271,11 @@ li:hover ul.niveau2, li li:hover ul.niveau3
     border-radius:10px;  
 }
 .livraison h3
+{
+   font-family: "Quand tu dors" ; 
+   font-size: 170%;
+}
+.livraison p 
 {
    font-family: "Quand tu dors" ; 
    font-size: 170%;
@@ -296,5 +316,10 @@ li:hover ul.niveau2, li li:hover ul.niveau3
 #facebook
 {
    text-align:center;
+   margin: 0px;
   
+}
+#facebook_accueil
+{
+    text-align: center;
 }
