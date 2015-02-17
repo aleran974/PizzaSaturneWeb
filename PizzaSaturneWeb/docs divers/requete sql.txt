@@ -1,0 +1,30 @@
+Affiche les ingredients et leurs types: 
+
+select ing_nom,ing_dispo,typing_libelle
+from ingredient
+inner join typing on ingredient.ing_typing_id = typing.typing_id;
+
+affiche nom recette + type: 
+
+select rec_nom,typ_libelle
+from recette
+inner join type on recette.rec_typ_id = type.typ_id;
+
+affiche nom + type + taille +prix
+
+select rec_nom,typ_libelle as nom,rec_tail_id as taille,rec_tarif as prix
+from recette
+inner join type on recette.rec_typ_id = type.typ_id
+inner join taille on recette.rec_tail_id = taille.tail_id;
+
+affiche les boisson alcoolise: 
+
+select bois_libelle,bois_tarif,bois_dispo,bois_alcoolise
+from boisson
+where bois_alcoolise = 1;
+
+affiche les boissons non alcoolisé: 
+
+select bois_libelle,bois_tarif,bois_dispo,bois_alcoolise
+from boisson
+where bois_alcoolise = 0;

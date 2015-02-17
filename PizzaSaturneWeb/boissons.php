@@ -1,3 +1,7 @@
+<?php
+    include'script/dbconnexion.php';
+    
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -42,7 +46,7 @@
                                 <li><a href="basetomate.php">Base Tomate</a></li>
                                 <li><a href="basecreme.php">Base Crème</a></li>
                                 <li><a href="poisson.php">Poissons</a></li>
-                                <li>A la carte</li>
+                                <li><a href="alacarte.php">A la carte</a></li>
                             </ul>
                         </li>
                         <li><a href="bruchettas.php">Bruchettas</a></li>
@@ -62,14 +66,48 @@
             <h1><u>Nos Boissons</u></h1>
         </section>
         
- 
-        <section id="tab">
-            
+        <section id="tabglobal">
+            <section id="tab1">
+                <h1><u>Boissons Alcoolisées</u></h1>
+                <?php
+                    $SQLQuery ='select bois_libelle,bois_volume,bois_tarif,bois_dispo,bois_alcoolise from boisson where bois_alcoolise = 1;';
+                    $SQLResult=mysqli_query($idconn,$SQLQuery);
+
+                    $Script='<table>'.'<tr><th>'.'Nom'.'</th>'.'<th>'.'Volume'.'</th>'.'<th>'.'Prix'.'</th></tr>';
+                        while ($SQLRow = mysqli_fetch_array($SQLResult)){
+                        $Script.= '<tr><td>'.utf8_encode($SQLRow['bois_libelle']).'</td>'.'<td>'.$SQLRow['bois_volume'].'cl'.'</td>'.'<td>'.$SQLRow['bois_tarif'].'€'.'</td></tr>'; 
+                        }
+                        $Script.= '</table>';
+                        print($Script);
+
+                ?>
+            </section>        
+            <section id="tab2">
+                <h1><u>Boissons Non-Alcoolisées</u></h1>
+                <?php
+                    $SQLQuery ='select bois_libelle,bois_volume,bois_tarif,bois_dispo,bois_alcoolise from boisson where bois_alcoolise = 0;';
+                    $SQLResult=mysqli_query($idconn,$SQLQuery);
+
+                    $Script='<table>'.'<tr><th>'.'Nom'.'</th>'.'<th>'.'Volume'.'</th>'.'<th>'.'Prix'.'</th></tr>';
+                        while ($SQLRow = mysqli_fetch_array($SQLResult)){
+                        $Script.= '<tr><td>'.utf8_encode($SQLRow['bois_libelle']).'</td>'.'<td>'.$SQLRow['bois_volume'].'cl'.'</td>'.'<td>'.$SQLRow['bois_tarif'].'€'.'</td></tr>'; 
+                        }
+                        $Script.= '</table>';
+                        print($Script);
+
+                ?>
+            </section>
         </section>
-        
         <footer>
             <a href="https://www.google.fr/maps/place/Pizza+Saturne/@44.807163,-0.627164,17z/data=!3m1!4b1!4m2!3m1!1s0xd54d8f6d0df81ff:0x51e401f95faf96">Plan d'accès</a>
-            <p> Copyright 2015 Pizza Saturne</p>
+            <p> Copyright 2015 Pizza Saturne
+                <?php
+                $date = date("d/m/Y");
+		$heure = date("H:i");
+		print ($date.'-'.$heure);
+                ?>
+            </p>
+            
         </footer>
     </body>
 

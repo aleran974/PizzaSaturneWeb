@@ -1,7 +1,3 @@
-<?php
-    include'script/dbconnexion.php';
-    
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -63,28 +59,16 @@
             </ul>	
         </nav>
         <section id="titre">
-            <h1><u>Nos Pâtes</u></h1>
+            <h1><u>Nos Pizzas Personnalisé</u></h1>
         </section>
         
- 
-        <section id="tabbruch">
-            <?php
-                $SQLQuery ='select rec_nom,rec_tarif from recette inner join type on recette.rec_typ_id = type.typ_id where typ_libelle = "pates";';
-                $SQLResult=mysqli_query($idconn,$SQLQuery);
-                
-                $Script='<table>'.'<tr><th>'.'Pates'.'</th>'.'<th>'.'Prix'.'</th></tr>';
-                    while ($SQLRow = mysqli_fetch_array($SQLResult)){
-                    $Script.= '<tr><td>'.utf8_encode($SQLRow['rec_nom']).'</td>'.'<td>'.$SQLRow['rec_tarif'].'€'.'</td></tr>'; 
-                    }
-                    $Script.= '</table>';
-                    print($Script);
+        <section id="tab">
             
-            ?>
         </section>
         
         <footer>
             <a href="https://www.google.fr/maps/place/Pizza+Saturne/@44.807163,-0.627164,17z/data=!3m1!4b1!4m2!3m1!1s0xd54d8f6d0df81ff:0x51e401f95faf96">Plan d'accès</a>
-            <p>Copyright 2015 Pizza Saturne
+            <p> Copyright 2015 Pizza Saturne
                 <?php
                 $date = date("d/m/Y");
 		$heure = date("H:i");
