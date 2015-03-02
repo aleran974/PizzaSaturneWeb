@@ -19,7 +19,7 @@ inner join taille on recette.rec_tail_id = taille.tail_id;
 
 affiche les boisson alcoolise: 
 
-select bois_libelle,bois_tarif,bois_dispo,bois_alcoolise
+select bois_libelle,bois_volume,bois_tarif,bois_dispo,bois_alcoolise
 from boisson
 where bois_alcoolise = 1;
 
@@ -28,3 +28,14 @@ affiche les boissons non alcoolisé:
 select bois_libelle,bois_tarif,bois_dispo,bois_alcoolise
 from boisson
 where bois_alcoolise = 0;
+
+update recette 
+set  rec_photo = "/produits/pizza/italienne.png"
+where rec_id =1;
+
+SELECT rec_photo,rec_nom,ing_nom,rec_tarifpetite,rec_tarifgrande
+ FROM recette 
+ INNER JOIN composer ON recette.rec_id = composer.rec_id
+ INNER JOIN ingredient ON composer.ing_id = ingredient.ing_id
+ INNER JOIN type ON recette.rec_typ_id = type.typ_id
+ WHERE typ_libelle = 'pizza' and rec_base ="tomate";

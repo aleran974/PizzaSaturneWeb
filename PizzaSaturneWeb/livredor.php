@@ -1,3 +1,18 @@
+<?php
+    include'script/dbconnexion.php';
+ ?>
+<?php
+                
+                
+                
+                if (!empty($_POST)){
+                    extract($_POST);
+                    $SQL =  "INSERT INTO article(art_pseudo,art_commentaire)values('".utf8_decode($pseudo)."','".utf8_decode($commentaire)."')";
+                    $requete = mysqli_query($idconn,$SQL);
+                    header('Location: livredor.php');                   
+                }  
+                    
+                ?>  
 <!DOCTYPE html>
 <html>
     <head>
@@ -62,17 +77,29 @@
             <h1><u>Livre d'Or                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       </u></h1>
         </section>
         <section id="form">
-            <form> 
-                <p>Pseudo: <input type="text" name="pseudo" /></p>
-                <textarea name="ameliorer" id="ameliorer" rows="10" cols="50"></textarea>
-            </form>
-                <input type="submit" value="valider"/>
-		<input type="reset" value="Annuler"/>
-
-        </section>  
-        
+            <form id=form" method="post" action="livredor.php"> 
+                <div id="formpseudo"><label>Pseudo:</label> <input type="text" name="pseudo" /></div>
+                <textarea id="zonecom" name="commentaire" id="commentaire" rows="5" cols="50" placeholder="votre commentaire"></textarea>
+                <input type="submit" name="valider" value="envoyer"/>                 
+            </form>	
+        </section> 
+        <section id="affichagelivre">
+             <?php
+                $SQLQuery ='select art_pseudo , art_commentaire from article;';
+                $SQLResult=mysqli_query($idconn,$SQLQuery);
+                
+                $Script='<table>'.'<tr><th>'.'Pseudo'.'</th>'.'<th>'.'Commentaire'.'</th></tr>';
+                    while ($SQLRow = mysqli_fetch_array($SQLResult)){
+                    $Script.= '<tr><td>'.  utf8_encode($SQLRow['art_pseudo']).'</td>'.'<td>'.utf8_encode($SQLRow['art_commentaire']).'</td></tr>'; 
+                    }
+                    $Script.= '</table>';
+                    print($Script);
+                
+                    
+            ?>
+        </section>
         <footer>
-            <a href="https://www.google.fr/maps/place/Pizza+Saturne/@44.807163,-0.627164,17z/data=!3m1!4b1!4m2!3m1!1s0xd54d8f6d0df81ff:0x51e401f95faf96">Plan d'accès</a>
+           <a href="https://www.google.fr/maps/place/Pizza+Saturne/@44.807163,-0.627164,17z/data=!3m1!4b1!4m2!3m1!1s0xd54d8f6d0df81ff:0x51e401f95faf96" target="_blank">Plan d'accès</a>
             <p>Copyright 2015 Pizza Saturne
                 <?php
                 $date = date("d/m/Y");
@@ -82,5 +109,8 @@
             </p>
         </footer>
     </body>
-
+<?php
+    mysqli_free_result($SQLResult);
+    mysqli_close($idconn);
+?>
 </html>

@@ -74,10 +74,12 @@
         </section>
         <section id="facebook">
             
-            <a href="https://www.facebook.com/saturne.pessac?fref=ts"><img src="image/facebook.png" alt="html5" /></a> 
+            <a href="https://www.facebook.com/saturne.pessac?fref=ts" target="_blank"><img src="image/facebook.png" alt="html5"/></a> 
+        </section>
+        <section id="plan">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2830.7068313598365!2d-0.6271639999999999!3d44.807162999999996!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd54d8f6d0df81ff%3A0x51e401f95faf96!2sPizza+Saturne!5e0!3m2!1sfr!2sfr!4v1424863602285" width="400" height="200" frameborder="0" style="border:0"></iframe>
         </section>
         <footer>
-            <a href="https://www.google.fr/maps/place/Pizza+Saturne/@44.807163,-0.627164,17z/data=!3m1!4b1!4m2!3m1!1s0xd54d8f6d0df81ff:0x51e401f95faf96">Plan d'accès</a>
             <p>Copyright 2015 Pizza Saturne
                 <?php
                 $date = date("d/m/Y");

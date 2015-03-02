@@ -67,42 +67,28 @@
         </section>
         
  
-        <section id="tabpan">
+        <section id="tabproduit">
             <?php
-                $SQLQuery ='select rec_nom,rec_tarif from recette inner join type on recette.rec_typ_id = type.typ_id where typ_libelle = "panini"';
+                $SQLQuery ="select rec_nom,rec_tarifpetite from recette inner join type on recette.rec_typ_id = type.typ_id where typ_libelle = 'panini'";
                 $SQLResult=mysqli_query($idconn,$SQLQuery);
                 
                 $Script='<table>'.'<tr><th>'.'Panini'.'</th>'.'<th>'.'Prix'.'</th></tr>';
                     while ($SQLRow = mysqli_fetch_array($SQLResult)){
-                    $Script.= '<tr><td>'.$SQLRow['rec_nom'].'</td>'.'<td>'.$SQLRow['rec_tarif'].'€'.'</td></tr>'; 
+                    $Script.= '<tr><td>'.utf8_encode($SQLRow['rec_nom']).'</td>'.'<td>'.$SQLRow['rec_tarifpetite'].'€'.'</td></tr>'; 
                     }
                     $Script.= '</table>';
                     print($Script);
             
             ?>
+                <article id="condi">
+                    <p>* supplément tomate : 0.50€</p>
+                </article>
         </section>
-        
-        <section id="titre">
-            <p> Les ingredients disponibles:</p>
-            
-        </section>
-        <section id="tabing">
-             <?php
-                $SQLQuery ='select ing_id,ing_nom  from ingredient  where ing_id in (7,4,9,3,8,39,40,23,28);';
-                $SQLResult=mysqli_query($idconn,$SQLQuery);
-                
-                $Script='<table>'.'<tr><th>'.'Ingredients'.'</th></tr>';
-                    while ($SQLRow = mysqli_fetch_array($SQLResult)){
-                    $Script.= '<tr><td>'.utf8_encode($SQLRow['ing_nom']).'</td></tr>'; 
-                    }
-                    $Script.= '</table>';
-                    print($Script);
-            
-            ?>
-        </section>
+
+       
         
         <footer>
-            <a href="https://www.google.fr/maps/place/Pizza+Saturne/@44.807163,-0.627164,17z/data=!3m1!4b1!4m2!3m1!1s0xd54d8f6d0df81ff:0x51e401f95faf96">Plan d'accès</a>
+            <a href="https://www.google.fr/maps/place/Pizza+Saturne/@44.807163,-0.627164,17z/data=!3m1!4b1!4m2!3m1!1s0xd54d8f6d0df81ff:0x51e401f95faf96" target="_blank">Plan d'accès</a>
             <p>Copyright 2015 Pizza Saturne
                 <?php
                 $date = date("d/m/Y");

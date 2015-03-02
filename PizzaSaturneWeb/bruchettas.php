@@ -67,23 +67,30 @@
         </section>
         
  
-        <section id="tabbruch">
+        <section id="tabproduit">
             <?php
-                $SQLQuery ='select rec_nom,rec_tarif,rec_photo from recette inner join type on recette.rec_typ_id = type.typ_id where typ_libelle = "bruschetta"';
+                $SQLQuery ="SELECT recette.rec_id,rec_photo,rec_nom,rec_tarifpetite,rec_tarifgrande FROM recette INNER JOIN type ON recette.rec_typ_id = type.typ_id WHERE typ_libelle = 'bruschetta' order by rec_nom asc";
                 $SQLResult=mysqli_query($idconn,$SQLQuery);
                 
-                $Script='<table>'.'<tr><th>'.'Photo'.'</th>'.'<th>'.'Bruschetta'.'</th>'.'<th>'.'Prix'.'</th></tr>';
-                    while ($SQLRow = mysqli_fetch_array($SQLResult)){
-                    $Script.= '<tr><td>'.'<img src="<?php echo $SQlRow['rec_photo']?>"/>'.'</td>'.'<td>'.$SQLRow['rec_nom'].'</td>'.'<td>'.$SQLRow['rec_tarif'].'€'.'</td></tr>'; 
+                $Script='<table><tr><th>Photo</th><th>pizza</th><th>ingredients</th><th>Petite 25cm</th><th>Grande 30cm</th></tr>';
+                    while ($SQLRow= mysqli_fetch_array($SQLResult)){
+                        $SQLQueryIngredient =' select ing_nom from recette INNER JOIN composer ON recette.rec_id = composer.rec_id INNER JOIN ingredient ON composer.ing_id = ingredient.ing_id INNER JOIN type ON recette.rec_typ_id = type.typ_id where recette.rec_id ='.$SQLRow['rec_id'];
+                        $SQLResulting=  mysqli_query($idconn, $SQLQueryIngredient);
+                          $Script.= '<tr><td><img src="'.$SQLRow['rec_photo'].'"'.'/></td><td>'.utf8_encode($SQLRow['rec_nom']).'</td><td>'; 
+                        while ($SQLRowIng= mysqli_fetch_array($SQLResulting)){
+                            $Script.=utf8_encode($SQLRowIng['ing_nom']).'<br/>';
+                        }
+                        $Script.='</td><td>'.$SQLRow['rec_tarifpetite'].' €<td>'.$SQLRow['rec_tarifgrande'].' €</td></tr>';
                     }
                     $Script.= '</table>';
                     print($Script);
             
             ?>
+            
         </section>
         
         <footer>
-            <a href="https://www.google.fr/maps/place/Pizza+Saturne/@44.807163,-0.627164,17z/data=!3m1!4b1!4m2!3m1!1s0xd54d8f6d0df81ff:0x51e401f95faf96">Plan d'accès</a>
+            <a href="https://www.google.fr/maps/place/Pizza+Saturne/@44.807163,-0.627164,17z/data=!3m1!4b1!4m2!3m1!1s0xd54d8f6d0df81ff:0x51e401f95faf96" target="_blank">Plan d'accès</a>
             <p>Copyright 2015 Pizza Saturne
                 <?php
                 $date = date("d/m/Y");

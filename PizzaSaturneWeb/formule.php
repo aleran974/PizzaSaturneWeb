@@ -60,15 +60,45 @@
         </nav>
         <section id="titre">
             <h1><u>Nos Menus</u></h1>
-        </section>
-        
- 
-        <section id="tab">
             
+        </section>
+        <section id="formule">
+            <article class="formule1">
+                <ul> 
+                    <li><u>Menu 2 personnes</u></li>
+                    <li> 1 grande pizza(au choix)*</li>
+                    <li> 6 chiken wings </li>
+                    <li> 15 potatoes </li>
+                    <li> 1 soda 33cl</li>
+                    <li> 19€</li>
+                </ul>
+            </article>
+            <article class="formule2">
+                <ul>
+                    <li><u>Menu 1 personne</u></li>
+                    <li> 1 Bruschetta </li>
+                    <li> 5 chicken wings</li>
+                    <li> 1 soda 33cl</li>
+                    <li> 10€</li>
+                </ul>
+            </article>
+            <article class="formule3">
+                <ul>
+                    <li><u>Menu Midi</u></li>
+                    <li> 1 panini </li>
+                    <li> 15 potatoes </li>
+                    <li> 1 donuts </li>
+                    <li> 1 soda 33cl</li>
+                    <li> 7€</li>
+                </ul>
+            </article>
+            <article id="condi">
+                <p>* hors Landaise</p>
+            </article>
         </section>
         
         <footer>
-            <a href="https://www.google.fr/maps/place/Pizza+Saturne/@44.807163,-0.627164,17z/data=!3m1!4b1!4m2!3m1!1s0xd54d8f6d0df81ff:0x51e401f95faf96">Plan d'accès</a>
+            <a href="https://www.google.fr/maps/place/Pizza+Saturne/@44.807163,-0.627164,17z/data=!3m1!4b1!4m2!3m1!1s0xd54d8f6d0df81ff:0x51e401f95faf96" target="_blank">Plan d'accès</a>
             <p>Copyright 2015 Pizza Saturne
                 <?php
                 $date = date("d/m/Y");
